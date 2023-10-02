@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Розклад</title>
+    <style>
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 70px;
+            background-color: #000120;
+        }
+        .header h1 {
+            margin-right: auto;
+        }
+        .content {
+            display: flex;
+            height: calc(100vh - 140px);
+        }
+        .main {
+            flex: 3;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .sidebar {
+            flex: 1;
+            padding: 1px;
+            background-color: #d3d3d3;
+            overflow-y: auto;
+        }
+
+        /* Стилі для кнопки "Вхід" */
+        form input[type="submit"].login-button {
+            background-color: lightblue;
+            color: white; 
+            border: none; 
+            padding: 10px 20px; /* Розміри відступів */
+            cursor: pointer; /* Змінити вигляд курсору при наведенні */
+        }
+
+        /* Стилі для кнопки "Реєстрація" */
+        form input[type="button"].registration-button {
+            background-color: green; 
+            color: white; 
+            border: none; 
+            padding: 10px 20px; /* Розміри відступів */
+            cursor: pointer; /* Змінити вигляд курсору при наведенні */
+        }
+
+        /* Розмір логотипу */
+        .header img {
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="C:\Users\Админ\Desktop\завантаження.png" alt="Логотип">
+        <h1 style="color:white;">Розклад на тиждень</h1>
+        <form style="color:white;" onsubmit="return validateForm()">
+            <label for="username">Ім'я користувача:</label><br>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Пароль:</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+            <input type="submit" class="login-button" value="Вхід">
+            <input type="button" class="registration-button" value="Реєстрація" onclick="window.location.href='file:///C:/Users/%D0%90%D0%B4%D0%BC%D0%B8%D0%BD/Desktop/registration.html';">
+        </form>
+    </div>
+
+    <div class="content">
+        <div class="sidebar">
+        </div>
+
+        <div class="main">
+            <h2>Розклад занять</h2>
+            <table border="1" style="width: 100%;">
+                <tr>
+                    <th>День</th>
+                    <th>Пара 1<br>08:30 - 10:05</th> 
+                    <th>Пара 2<br>10:25 - 12:00</th> 
+                    <th>Пара 3<br>12:20 - 13:55</th> 
+                    <th>Пара 4<br>16:10 - 17:45</th> 
+                </tr>
+                <tr>
+                    <td>Понеділок</td><td>ФВЗ</td><td>Прав</td><td>ІМЗ</td><td>Прогр</td>
+                </tr>
+                <tr>
+                    <td>Вівторок</td><td>ФВЗ</td><td>ТІМ</td><td>СР</td><td>СР</td>
+                </tr>
+                <tr>
+                    <td>Середа</td><td>ТІМ</td><td>СР</td><td>ІМЗ</td><td>СР</td>
+                </tr>
+                <tr>
+                    <td>Четверг</td><td>ТС</td><td>ТС</td><td>ТІМ</td><td>СР</td>
+                </tr>
+                <tr>
+                    <td>П'ятниця</td><td>ФВЗ</td><td>Прав</td><td>ТІК</td><td>СР</td>
+                </tr>
+                <tr>
+                    <td>Субота</td><td>СР</td><td>СР</td><td>СР</td>               
+ </tr>
+            </table>
+
+        </div>
+
+        <div class="sidebar">
+            
+        </div>
+    </div>
+
+    <div class="header">
+        <p style="color:white;">© 2023 Мій вебсайт. Всі права захищені.</p>
+    </div>
+
+    <script type="text/javascript">
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username == "" || password == "") {
+                alert("Будь ласка, заповніть всі поля.");
+                return false;
+            }
+
+            if (password.length < 8) {
+                alert("Пароль повинен містити принаймні 8 символів.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>
