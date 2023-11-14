@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Основи JavaScript та DOM</title>
+    <style>
+        .red-text {
+            color: red;
+        }
+
+        .blue-text {
+            color: blue;
+        }
+
+        .green-text {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="myDiv" class="box">
+        <h1>Добридень шановний</h1>
+        <p class="red-text">Це параграф.</p>
+    </div>
+    <ul>
+        <li class="red-text">Перший пункт списку</li>
+        <li class="blue-text">Другий пункт списку</li>
+        <!-- Одразу додаємо зелений пункт -->
+        <li class="green-text">Третій пункт списку</li>
+    </ul>
+    <a href="#" id="myLink" class="red-text">Посилання</a>
+</body>
+<script>
+    // Вибір елементу за ID і зміна тексту
+    var myDiv = document.getElementById("myDiv");
+    myDiv.innerHTML = "<h1>Добридень шановний</h1>";
+
+    // Вибір елементу за класом і зміна стилів
+    var boxes = document.getElementsByClassName("box");
+    for (var i = 0; i < boxes.length; i++) {
+        boxes[i].style.backgroundColor = "lightblue";
+        boxes[i].style.border = "2px solid blue";
+    }
+
+    // Вибір всіх пунктів списку та додавання нового пункту
+    var listItems = document.querySelectorAll("ul li");
+    for (var i = 0; i < listItems.length; i++) {
+        listItems[i].style.listStyleType = "square";
+    }
+
+    // Вибір посилання за ID та зміна посилання
+    var myLink = document.getElementById("myLink");
+    myLink.href = "https://www.example.com";
+    myLink.textContent = "Змінене посилання";
+    myLink.classList.add("blue-text");
+
+    // Навігація до батьківського та дочірнього елементів
+    console.log("Батьківський елемент для 'myDiv':", myDiv.parentNode);
+    console.log("Дочірні елементи для 'myDiv':", myDiv.children);
+
+    // Додавання обробника кліку до посилання
+    myLink.addEventListener("click", function(event) {
+        event.preventDefault();
+        alert("Користувач клікнув на посиланні!");
+    });
+</script>
+</html>
