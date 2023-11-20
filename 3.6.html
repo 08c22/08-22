@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Загальне завдання</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, #00bcd4, #2196f3);
+            color: #fff;
+        }
+
+        #container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #myInput {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #myButton {
+            padding: 10px;
+            cursor: pointer;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <!-- Завдання №2: Обробка подій клавіатури -->
+    <input type="text" id="myInput" placeholder="Введіть текст">
+    <button id="myButton">Натисни мене</button>
+</div>
+
+<script>
+    // Завдання №1
+    var button1 = document.getElementById("myButton");
+    button1.addEventListener("click", function() {
+        alert("Кнопка була натиснута!");
+    });
+
+    // Завдання №2
+    var inputField = document.getElementById("myInput");
+    inputField.addEventListener("keydown", function(event) {
+        console.log("Клавіша була натиснута!");
+    });
+
+    // Завдання №3
+    inputField.addEventListener("focus", function() {
+        console.log("Елемент отримав фокус!");
+    });
+
+    inputField.addEventListener("blur", function() {
+        console.log("Елемент втратив фокус!");
+    });
+
+    // Завдання №4
+    document.addEventListener("DOMContentLoaded", function() {
+        console.log("Документ повністю завантажено!");
+    });
+
+    // Завдання №5
+    var button2 = document.getElementById("myButton");
+    button2.addEventListener("click", function() {
+        console.log("Подія виникла!");
+    });
+
+    button2.addEventListener("click", function() {
+        console.log("Ще один обробник події!");
+    });
+</script>
+
+</body>
+</html>
